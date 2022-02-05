@@ -1,0 +1,225 @@
+<html>
+  <head>
+    <title>Duels de citations</title>
+
+
+  <!-- <button id="btnmodal" aria-label="close">iciiiiiiii</button> -->
+
+
+    <link rel="stylesheet" href="bulma.min.css" />
+    <link href="./css/all.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>  
+
+    <div class="modal" >
+  <div class="modal-background"></div>
+  <div class="modal-content has-background-white" style="width:700px; height:700px; ">
+   <span style="color:black" id="detail"> </span>
+   </div>
+       <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <body>
+    <nav  class="navbar" role="navigation" aria-label="main navigation">
+      <div  class="navbar-end">
+        <div class="navbar-item">
+          <div id="nav" class="buttons">
+            <a id="btn-open-login-modal" class="button is-light"> 
+              Utilisateur
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <h1 class="title">Duels de citations</h1>
+        <p class="subtitle">Quelle est votre citation favorite ?</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="tabs is-centered">
+        <ul>
+          <li class="is-active" id="tab-duel">
+            <a>Voter</a>
+          </li>
+          <li id="tab-tout"><a>Toutes les citations</a></li>
+        </ul>
+      </div>
+
+      <div class="field has-addons has-addons-left">
+        <label class="label">Citation *</label>
+        <div class="control">
+          <input id="citation" class="input is-small" type="text">
+        </div>
+      </div>
+
+      <div class="field has-addons has-addons-left">
+        <label class="label">Personnage *</label>
+        <div class="control">
+          <input id="perso" class="input is-small" type="text">
+        </div>
+      </div>
+
+      <div class="field has-addons has-addons-left">
+        <label class="label">Image</label>
+        <div class="control">
+          <input id="image" class="input is-small" type="text">
+        </div>
+      </div>
+
+      <div class="field has-addons has-addons-left">
+        <label class="label">Personnage direction</label>
+        <div class="control">
+          <input id="direct" class="input is-small" type="text">
+        </div>
+      </div>
+
+      <div class="field has-addons has-addons-left">
+        <label class="label">Origine *</label>
+        <div class="control">
+          <input id="origine" class="input is-small" type="text">
+        </div>
+      </div>
+      <button class="button is-success is-outlined" onclick="ajouter();">Ajouter</button> 
+
+      <div class="columns" id="div-duel">
+        <div class="column">
+          <div class="card">
+            <div class="columns card-content">
+              <div class="column is-one-third">
+                <div class="card-image">
+                  <figure  class="image">
+                    <img id="img1"
+                      src="https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FRalphWiggum.png?1497567511523"
+                     
+                    />
+                  </figure>
+                </div>
+              </div>
+              <div class="column is-8">
+                <p id="cit1" class="title"></p>
+                <p class="subtitle"></p> 
+              </div> 
+              <!-- <p class="title" id="citation1"> </p> </div> -->
+            </div>
+            <div class="card-content">
+              <div class="columns is-centered">
+                <p id="btng" class="button is-danger" >
+                  Voter pour la citation de gauche !
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="columns card-content">
+              <div class="column is-8">
+              <p id="cit2" class="title"></p>
+                <p class="subtitle"></p>
+              </div> 
+            <!--  <p class="title" id="citation2"> </p> </div> -->
+
+              <div class="column is-one-third">
+                <div class="card-image">
+                  <figure class="image">
+                    <img id="img2" 
+                      src="https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FFrankGrimes.png?1497567511887"
+                      style="transform: scaleX(-1)"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div  class="columns is-centered"  >
+                <p id="btnd" class="button is-info">Voter pour la citation de droite !</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="div-tout">
+        <table class="table">
+          <thead>
+            <tr>
+              <th id="classement">Classement</th>
+              <th id="personnage">Personnage 
+              <input type="text" id="filtreperso" placeholder="entrez un mot-clé"></th>
+              
+              <th id="citation">Citation
+              <input type="text" id="filtrecit" placeholder="entrez un mot-clé"></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"> </tbody>
+        </table>
+     </div>
+    </section>
+
+    <form id="formulaire">
+      <div class="field">
+        <label class="label">Citation</label>
+        <div class="control">
+          <input id="citation2" class="input" type="text" placeholder="Text input">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Personnage</label>
+        <div class="control">
+          <input id="perso2"class="input" type="text" placeholder="Text input">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Image</label>
+        <div class="control">
+          <input id="image2" class="input" type="text" placeholder="Text input">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Personnage direction</label>
+        <div class="control">
+          <input id="direct2" class="input" type="text" placeholder="Text input">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Origine</label>
+        <div class="control">
+          <input id="origine2" class="input" type="text" placeholder="Text input">
+        </div>
+      </div>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary" onclick="envoiModification();" >Modifier</button>
+      </form>
+
+    <div id="mdl-login" class="modal is-active">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Utilisateur</p>
+          <button
+            id="btn-close-login-modal1"
+            class="delete"
+            aria-label="close"
+          ></button>
+        </header>
+        <section class="modal-card-body">
+          <p id="elt-affichage-login">
+            Ici, il faudrait afficher le login de l'utilisateur. 
+          </p>
+         <br>             
+         <input type="password" id="api" placeholder="Clé API"> </input>
+         <input type="button" id="btn" onclick="requete();">Vérifier </input>
+       </section>
+        <footer class="modal-card-foot" style="justify-content: flex-end">
+          <button id="btn-close-login-modal2" class="button">Fermer</button>
+        </footer>
+      </div>
+    </div>
+
+
+    <script src="client.js"> </script>
+
+
+  </body>
+</html>
