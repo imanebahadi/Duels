@@ -1,2 +1,2 @@
 # Duels
-Impossible d'accéder au serveur https://lifap5.univ-lyon1.fr. Erreur sûrement dûe à une surcharge du serveur Web.
+Le serveur https://lifap5.univ-lyon1.fr a changé. Il contient des données pour un projet différent (changement effectué par l'enseignant).
